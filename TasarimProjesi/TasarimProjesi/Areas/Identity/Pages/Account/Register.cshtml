@@ -1,67 +1,52 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+	ViewData["Title"] = "Çalışan Ekle";
 }
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+	<link rel="stylesheet" href="~/css/adminlte.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition register-page">
+	<div class="row">
+		<div class="col-md-4">
+			<form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+				<h4>Yeni Çalışan Ekle</h4>
+				<hr />
+				<div class="form-group">
+					<label asp-for="Input.Email"></label>
+					<input asp-for="Input.Email" class="form-control" />
+					<span asp-validation-for="Input.Email" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Input.Password"></label>
+					<input asp-for="Input.Password" class="form-control" />
+					<span asp-validation-for="Input.Password" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Input.ConfirmPassword"></label>
+					<input asp-for="Input.ConfirmPassword" class="form-control" />
+					<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+				</div>
+				<button type="submit" class="btn btn-primary">Kayıt Oluştur</button>
+			</form>
+		</div>
+	</div>
 
-<h1>@ViewData["Title"]</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                <label asp-for="Input.Email"></label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.Password"></label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.ConfirmPassword"></label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
+	<script src="~/plugins/jquery/jquery.min.js"></script>
+	<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="~/dist/js/adminlte.min.js"></script>
+</body>
+</html>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+	<partial name="_ValidationScriptsPartial" />
 }

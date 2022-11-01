@@ -10,6 +10,10 @@ namespace TasarimProjesi.Data
             : base(options)
         {
         }
-        public DbSet<TasarimProjesi.Models.Request> Request { get; set; }
+        public DbSet<Request> Request { get; set; }
+        public DbSet<Purchasing> Purchasing { get; set; }
+        public DbSet<PurchasingItem> PurchasingItem { get; set; }
+
+
     }
 }

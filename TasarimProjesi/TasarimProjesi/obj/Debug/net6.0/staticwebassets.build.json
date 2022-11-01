@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wGy6Q9PvYRSEGW+BReYxHt3K1Ol8CSHH3/cNk7Ak66c=",
+  "Hash": "S+LXF8IT6fsfDTAfl0cotaCUQ9L+LApzTAMGFeqVsCo=",
   "Source": "TasarimProjesi",
   "BasePath": "_content/TasarimProjesi",
   "Mode": "Default",
@@ -3211,6 +3211,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\furka\\Desktop\\TasarimProjesi\\TasarimProjesi\\wwwroot\\logo.jpg",
+      "SourceId": "TasarimProjesi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\furka\\Desktop\\TasarimProjesi\\TasarimProjesi\\wwwroot\\",
+      "BasePath": "_content/TasarimProjesi",
+      "RelativePath": "logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo.jpg"
     },
     {
       "Identity": "C:\\Users\\furka\\Desktop\\TasarimProjesi\\TasarimProjesi\\wwwroot\\plugins\\bootstrap\\js\\bootstrap.bundle.js",

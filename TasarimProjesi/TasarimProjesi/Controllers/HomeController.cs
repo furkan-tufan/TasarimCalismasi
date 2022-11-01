@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TasarimProjesi.Models;
 
@@ -12,13 +13,8 @@ namespace TasarimProjesi.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize]
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }

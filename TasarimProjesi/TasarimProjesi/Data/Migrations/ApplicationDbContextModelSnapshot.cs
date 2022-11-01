@@ -260,7 +260,60 @@ namespace TasarimProjesi.Data.Migrations
 
                     b.HasIndex("RequestId");
 
-                    b.ToTable("FileModel");
+                    b.ToTable("FileModel", (string)null);
+                });
+
+            modelBuilder.Entity("TasarimProjesi.Models.Purchasing", b =>
+                {
+                    b.Property<int>("PurchasingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurchasingId"), 1L, 1);
+
+                    b.HasKey("PurchasingId");
+
+                    b.ToTable("Purchasing", (string)null);
+                });
+
+            modelBuilder.Entity("TasarimProjesi.Models.PurchasingItem", b =>
+                {
+                    b.Property<int>("PurchasingItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurchasingItemId"), 1L, 1);
+
+                    b.Property<decimal?>("Amount")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Currency")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Product")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PurchasingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Unit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PurchasingItemId");
+
+                    b.HasIndex("PurchasingId");
+
+                    b.ToTable("PurchasingItem", (string)null);
                 });
 
             modelBuilder.Entity("TasarimProjesi.Models.Request", b =>
@@ -285,7 +338,7 @@ namespace TasarimProjesi.Data.Migrations
 
                     b.HasKey("RequestId");
 
-                    b.ToTable("Request");
+                    b.ToTable("Request", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -346,6 +399,20 @@ namespace TasarimProjesi.Data.Migrations
                         .HasForeignKey("RequestId");
 
                     b.Navigation("Request");
+                });
+
+            modelBuilder.Entity("TasarimProjesi.Models.PurchasingItem", b =>
+                {
+                    b.HasOne("TasarimProjesi.Models.Purchasing", null)
+                        .WithMany("Items")
+                        .HasForeignKey("PurchasingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TasarimProjesi.Models.Purchasing", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("TasarimProjesi.Models.Request", b =>
