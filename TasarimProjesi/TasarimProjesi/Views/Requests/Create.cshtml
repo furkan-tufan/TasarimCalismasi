@@ -1,0 +1,36 @@
+﻿@model TasarimProjesi.Models.Request
+
+@{
+    ViewData["Title"] = "Talep Oluştur";
+}
+
+<h2>Talep Oluştur</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="RequestTitle" class="form-control" placeholder="Talep Başlığı" />
+                <span asp-validation-for="RequestTitle" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <textarea asp-for="RequestDetail" class="form-control" placeholder="Talebiniz"></textarea>
+                <span asp-validation-for="RequestDetail" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input asp-for="Files" type="file" multiple />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
