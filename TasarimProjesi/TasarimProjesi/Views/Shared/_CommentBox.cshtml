@@ -1,0 +1,16 @@
+﻿<div>
+	<form asp-controller="Comment" asp-action="Create" class="col-md-9">
+		@Html.AntiForgeryToken()
+		<div class="form-horizontal">
+			<div class="form-group">
+				<textarea name="CommentDetail" id="CommentDetail" required rows="5" style="width:100%;" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<div>
+					<input type="hidden" name="PurchasingItemId" value="@ViewBag.PurchasingItemId" />
+					<input type="submit" id="btnRegister" name="btnRegister" value="Yorum Yap" class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -224,6 +224,31 @@ namespace TasarimProjesi.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("TasarimProjesi.Models.Comment", b =>
+                {
+                    b.Property<int>("CommentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"), 1L, 1);
+
+                    b.Property<string>("CommentDetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PurchasingItemId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Time")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("User")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CommentId");
+
+                    b.ToTable("Comment");
+                });
+
             modelBuilder.Entity("TasarimProjesi.Models.FileModel", b =>
                 {
                     b.Property<int>("FileId")
@@ -260,7 +285,7 @@ namespace TasarimProjesi.Data.Migrations
 
                     b.HasIndex("RequestId");
 
-                    b.ToTable("FileModel", (string)null);
+                    b.ToTable("FileModel");
                 });
 
             modelBuilder.Entity("TasarimProjesi.Models.Purchasing", b =>
@@ -273,7 +298,7 @@ namespace TasarimProjesi.Data.Migrations
 
                     b.HasKey("PurchasingId");
 
-                    b.ToTable("Purchasing", (string)null);
+                    b.ToTable("Purchasing");
                 });
 
             modelBuilder.Entity("TasarimProjesi.Models.PurchasingItem", b =>
@@ -313,7 +338,7 @@ namespace TasarimProjesi.Data.Migrations
 
                     b.HasIndex("PurchasingId");
 
-                    b.ToTable("PurchasingItem", (string)null);
+                    b.ToTable("PurchasingItem");
                 });
 
             modelBuilder.Entity("TasarimProjesi.Models.Request", b =>
@@ -327,6 +352,12 @@ namespace TasarimProjesi.Data.Migrations
                     b.Property<string>("Date")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HelpContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsOver")
+                        .HasColumnType("bit");
+
                     b.Property<string>("RequestDetail")
                         .HasColumnType("nvarchar(max)");
 
@@ -338,7 +369,7 @@ namespace TasarimProjesi.Data.Migrations
 
                     b.HasKey("RequestId");
 
-                    b.ToTable("Request", (string)null);
+                    b.ToTable("Request");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -403,11 +434,13 @@ namespace TasarimProjesi.Data.Migrations
 
             modelBuilder.Entity("TasarimProjesi.Models.PurchasingItem", b =>
                 {
-                    b.HasOne("TasarimProjesi.Models.Purchasing", null)
+                    b.HasOne("TasarimProjesi.Models.Purchasing", "Purchasing")
                         .WithMany("Items")
                         .HasForeignKey("PurchasingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Purchasing");
                 });
 
             modelBuilder.Entity("TasarimProjesi.Models.Purchasing", b =>

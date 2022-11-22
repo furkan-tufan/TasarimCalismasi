@@ -45,7 +45,8 @@ namespace TasarimProjesi.Controllers
             {
                 return NotFound();
             }
-
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            ViewData["User"] = user.UserName;
             return View(request);
         }
 
@@ -109,6 +110,8 @@ namespace TasarimProjesi.Controllers
             {
                 return NotFound();
             }
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            ViewData["User"] = user.UserName;
             return View(request);
         }
 
@@ -120,6 +123,7 @@ namespace TasarimProjesi.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("RequestId,RequestTitle,RequestDetail,Date,User")] Request request)
         {
+            string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             if (id != request.RequestId)
             {
                 return NotFound();
@@ -129,6 +133,26 @@ namespace TasarimProjesi.Controllers
             {
                 try
                 {
+                    foreach (var file in request.Files)
+                    {
+
+                        var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                        var extension = Path.GetExtension(file.FileName);
+                        var fileModel = new FileModel
+                        {
+                            CreatedOn = time,
+                            FileType = file.ContentType,
+                            Extension = extension,
+                            Name = fileName
+                        };
+                        using (var dataStream = new MemoryStream())
+                        {
+                            await file.CopyToAsync(dataStream);
+                            fileModel.Data = dataStream.ToArray();
+                        }
+                        request.FileList.Add(fileModel);
+                    }
+                    request.IsOver = true;
                     _context.Update(request);
                     await _context.SaveChangesAsync();
                 }

@@ -19,11 +19,6 @@ namespace TasarimProjesi.Controllers
             _context = context;
             _userManager = userManager;
         }
-        [Authorize]
-        public async Task<IActionResult> IndexAsync()
-        {
-            return View();
-        }
         [HttpGet]
         [Authorize]
         public IActionResult Create()
@@ -44,7 +39,8 @@ namespace TasarimProjesi.Controllers
             }
             _context.Add(purchasing);
             await _context.SaveChangesAsync();
-            return View("Index");
+            return RedirectToAction("Home", "Index");
+
         }
     }
 }

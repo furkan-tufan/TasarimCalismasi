@@ -1,49 +1,80 @@
 ﻿@model TasarimProjesi.Models.Request
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Yardım Ekranı";
 }
 
-<h1>Edit</h1>
 
-<h4>Request</h4>
+<h3>Yardım Ekranı</h3>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="RequestId" />
-            <div class="form-group">
-                <label asp-for="RequestTitle" class="control-label"></label>
-                <input asp-for="RequestTitle" class="form-control" />
-                <span asp-validation-for="RequestTitle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RequestDetail" class="control-label"></label>
-                <input asp-for="RequestDetail" class="form-control" />
-                <span asp-validation-for="RequestDetail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="User" class="control-label"></label>
-                <input asp-for="User" class="form-control" />
-                <span asp-validation-for="User" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.RequestTitle)
+
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.RequestTitle)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.RequestDetail)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.RequestDetail)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+            <dt class="col-sm-3">
+                Talebi Açan
+            </dt>
+            <dd class="col-sm-9">
+                @ViewBag.User
+            </dd>
+        </dl>
+        <hr />
+        @if (!Model.IsOver)
+        {
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="RequestId" />
+                <input type="hidden" asp-for="RequestTitle" />
+                <input type="hidden" asp-for="RequestDetail" />
+                <input type="hidden" asp-for="Date" />
+                <div class="form-group">
+                    <label asp-for="HelpContent" class="control-label">Destek Mesajınız:</label>
+                    <input asp-for="HelpContent" class="form-control" />
+                    <span asp-validation-for="HelpContent" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Files" type="file" multiple />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Kaydet" class="btn btn-primary" />
+                </div>
+            </form>
+        }
+        @if (Model.IsOver)
+        {
+            <dl class="row">
+                <div class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.HelpContent)
+                </div>
+                <div class="col-sm-9">
+                    @Html.DisplayFor(model => model.HelpContent)
+                </div>
+            </dl>
+        }
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

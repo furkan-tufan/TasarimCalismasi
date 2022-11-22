@@ -13,6 +13,8 @@ namespace TasarimProjesi.Data
         public DbSet<Request> Request { get; set; }
         public DbSet<Purchasing> Purchasing { get; set; }
         public DbSet<PurchasingItem> PurchasingItem { get; set; }
+        public DbSet<FileModel> FileModel { get; set; }
+        public DbSet<Comment> Comment { get; set; }
 
 
     }

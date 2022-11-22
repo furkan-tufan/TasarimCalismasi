@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<TasarimProjesi.Models.Request>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Talep Listesi";
 }
 
-<h1>Index</h1>
+<h3>Talep Listesi</h3>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -20,9 +17,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
             </th>
             <th></th>
         </tr>
@@ -40,12 +34,8 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.RequestId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.RequestId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.RequestId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.RequestId">Yardım Ekranı</a> |
+                <a asp-action="Delete" asp-route-id="@item.RequestId">Sil</a>
             </td>
         </tr>
 }
