@@ -63,7 +63,7 @@ namespace TasarimProjesi.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Create([Bind("RequestId,RequestTitle,RequestDetail,Date,User")] Request request)
+        public async Task<IActionResult> Create(Request request)
         {
             if (ModelState.IsValid)
             {
