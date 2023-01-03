@@ -1,17 +1,15 @@
 ﻿@model IEnumerable<TasarimProjesi.Models.PurchasingItem>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Sipariş Listesi";
 }
 
-<h1>Index</h1>
-
-<table class="table">
+<h2>Sipariş Listesi</h2>
+<hr />
+<br />
+<table class="table table-secondary table-hover">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Purchasing)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Product)
             </th>
@@ -25,10 +23,10 @@
                 @Html.DisplayNameFor(model => model.Brand)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Currency)
+                @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Currency)
             </th>
             <th></th>
         </tr>
@@ -36,9 +34,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Purchasing.PurchasingId)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product)
             </td>
@@ -52,10 +47,10 @@
                 @Html.DisplayFor(modelItem => item.Brand)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Currency)
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.Currency)
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.PurchasingItemId">Detaylar</a> |

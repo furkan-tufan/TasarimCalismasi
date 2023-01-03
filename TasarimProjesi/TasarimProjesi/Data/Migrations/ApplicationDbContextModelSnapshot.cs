@@ -275,6 +275,9 @@ namespace TasarimProjesi.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PurchasingItemId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("RequestId")
                         .HasColumnType("int");
 
@@ -282,6 +285,8 @@ namespace TasarimProjesi.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FileId");
+
+                    b.HasIndex("PurchasingItemId");
 
                     b.HasIndex("RequestId");
 
@@ -295,6 +300,9 @@ namespace TasarimProjesi.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PurchasingId"), 1L, 1);
+
+                    b.Property<string>("User")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PurchasingId");
 
@@ -333,6 +341,9 @@ namespace TasarimProjesi.Data.Migrations
                     b.Property<string>("Unit")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Uploaded")
+                        .HasColumnType("bit");
 
                     b.HasKey("PurchasingItemId");
 
@@ -425,9 +436,15 @@ namespace TasarimProjesi.Data.Migrations
 
             modelBuilder.Entity("TasarimProjesi.Models.FileModel", b =>
                 {
+                    b.HasOne("TasarimProjesi.Models.PurchasingItem", "PurchasingItem")
+                        .WithMany("FileList")
+                        .HasForeignKey("PurchasingItemId");
+
                     b.HasOne("TasarimProjesi.Models.Request", "Request")
                         .WithMany("FileList")
                         .HasForeignKey("RequestId");
+
+                    b.Navigation("PurchasingItem");
 
                     b.Navigation("Request");
                 });
@@ -446,6 +463,11 @@ namespace TasarimProjesi.Data.Migrations
             modelBuilder.Entity("TasarimProjesi.Models.Purchasing", b =>
                 {
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("TasarimProjesi.Models.PurchasingItem", b =>
+                {
+                    b.Navigation("FileList");
                 });
 
             modelBuilder.Entity("TasarimProjesi.Models.Request", b =>

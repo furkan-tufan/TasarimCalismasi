@@ -1,0 +1,62 @@
+﻿@model IEnumerable<TasarimProjesi.Models.PurchasingItem>
+
+@{
+    ViewData["Title"] = "Faturası Girilmemiş Siparişler";
+}
+<h2>Faturası Girilmemiş Siparişler</h2>
+<hr />
+<br />
+
+<table class="table table-secondary table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Currency)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Unit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Currency)
+                </td>
+                <td>
+                    <a asp-action="Accounting" asp-route-id="@item.PurchasingItemId">Fatura Girişi</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

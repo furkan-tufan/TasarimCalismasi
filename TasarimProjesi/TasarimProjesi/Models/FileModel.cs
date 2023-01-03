@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TasarimProjesi.Models
 {
     public class FileModel
     {
-
         [Key]
         public int FileId { get; set; }
         public string? Name { get; set; }
@@ -18,6 +17,10 @@ namespace TasarimProjesi.Models
         [ForeignKey("Request")]
         public int? RequestId { get; set; }
         public virtual Request? Request { get; set; }
+
+        [ForeignKey("PurchasingItem")]
+        public int? PurchasingItemId { get; set; }
+        public virtual PurchasingItem? PurchasingItem { get; set; }
 
     }
 }

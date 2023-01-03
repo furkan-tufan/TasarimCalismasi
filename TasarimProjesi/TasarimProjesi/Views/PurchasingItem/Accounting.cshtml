@@ -1,0 +1,62 @@
+﻿@model TasarimProjesi.Models.PurchasingItem
+
+@{
+    ViewData["Title"] = "Fatura Girişi";
+    int id = Model.PurchasingItemId;
+}
+<h2>Fatura Girişi</h2>
+<hr />
+<br />
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Sipariş No
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Purchasing.PurchasingId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Product)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Price) @Html.DisplayFor(model => model.Currency)
+        </dd>
+    </dl>
+</div>
+<br />
+<hr />
+<br />
+<form asp-action="Invoice" asp-controller="PurchasingItem" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="file" name="invoices" multiple required />
+    <input name="id" value="@ViewBag.Id" type="hidden" class="form-control" />
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Faturaları Kaydet" class="btn btn-success" />
+    </div>
+</form>

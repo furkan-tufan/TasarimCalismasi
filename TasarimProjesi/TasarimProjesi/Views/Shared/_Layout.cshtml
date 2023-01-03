@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>@ViewData["Title"]</title>
-    <partial name="AdminLTE/_Styles" />
+    <partial name="_Styles" />
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <partial name="AdminLTE/_TopNavigation" />
-        <partial name="AdminLTE/_MainNavigation" />
+        <partial name="_MainNavigation" />
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
@@ -34,7 +33,9 @@
             </div>
         </aside>
     </div>
-    <partial name="AdminLTE/_Scripts" />
+    <partial name="_Scripts" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await Component.InvokeAsync("Notyf")
     @RenderSection("Scripts", required: false)
 </body>
 </html>

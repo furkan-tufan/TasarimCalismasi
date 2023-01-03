@@ -1,0 +1,22 @@
+﻿@model List<DiemPortal.Models.UserModel>
+@{
+    ViewData["Title"] = "Kullanıcılar";
+}
+<h2 style="display: inline-block">Kullanıcılar</h2>
+<hr />
+<br />
+<table class="table table-hover table-active">
+    <thead class="thead-dark">
+        <tr>
+            <th class="col-md-3">E-Posta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+            </tr>
+        }
+    </tbody>
+</table>

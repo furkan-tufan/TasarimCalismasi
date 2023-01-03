@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kb/mSkX+bJPOk03sTspVeCgBgM0/e+VT+p3e7i2bWJYSYcC2Gx9YPiTe4721eKoTUEhCapxni7JAo7wHdFscDQ==",
+  "dgSpecHash": "RPfgqKKf+WTg4cr1Jn+rLFsHWjZ2wkSDp3kvrpfXfUFNkSaU3IF9cryYU4K6H6qo05+13sLt6EdU2GeNH32BRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Furkan\\Desktop\\TasarimProjesi\\TasarimProjesi\\TasarimProjesi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Furkan\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

@@ -1,11 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
-
 namespace TasarimProjesi.Models
 {
     public class PurchasingItem
     {
+        public PurchasingItem()
+        {
+            Uploaded = false;
+        }
+
         [Key]
         public int PurchasingItemId { get; set; }
         [ForeignKey("Purchasing")]
@@ -25,9 +28,15 @@ namespace TasarimProjesi.Models
         [Required(ErrorMessage = "Marka Giriniz")]
         public string? Brand { get; set; }
         [EnumDataType(typeof(Currency))]
+        [Display(Name = "Para Birimi")]
         public Currency? Currency { get; set; }
         [Display(Name = "Fiyat")]
         public decimal? Price { get; set; }
+        public bool Uploaded { get; set; }
+
+        [NotMapped]
+        public virtual List<IFormFile>? Invoices { get; set; } = new List<IFormFile>();
+        public virtual List<FileModel>? FileList { get; set; } = new List<FileModel>();
     }
     public enum Currency
     {

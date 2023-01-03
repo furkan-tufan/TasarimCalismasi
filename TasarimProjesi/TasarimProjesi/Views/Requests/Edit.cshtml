@@ -4,15 +4,14 @@
     ViewData["Title"] = "Yardım Ekranı";
 }
 
-
-<h3>Yardım Ekranı</h3>
+<h2>Yardım Ekranı</h2>
 <hr />
+<br />
 <div class="row">
     <div class="col-md-6">
         <dl class="row">
             <dt class="col-sm-3">
                 @Html.DisplayNameFor(model => model.RequestTitle)
-
             </dt>
             <dd class="col-sm-9">
                 @Html.DisplayFor(model => model.RequestTitle)
@@ -36,14 +35,15 @@
                 @ViewBag.User
             </dd>
         </dl>
-        <hr />
-        @if (!Model.IsOver)
+        <hr />  
+        @if (!Model.IsOver && (User.IsInRole("IT") || User.IsInRole("Yönetici")))
         {
             <form asp-action="Edit" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="RequestId" />
                 <input type="hidden" asp-for="RequestTitle" />
                 <input type="hidden" asp-for="RequestDetail" />
+                <input type="hidden" asp-for="User" />
                 <input type="hidden" asp-for="Date" />
                 <div class="form-group">
                     <label asp-for="HelpContent" class="control-label">Destek Mesajınız:</label>
@@ -61,12 +61,12 @@
         @if (Model.IsOver)
         {
             <dl class="row">
-                <div class="col-sm-3">
+                <dt class="col-sm-3">
                     @Html.DisplayNameFor(model => model.HelpContent)
-                </div>
-                <div class="col-sm-9">
+                </dt>
+                <dd class="col-sm-9">
                     @Html.DisplayFor(model => model.HelpContent)
-                </div>
+                </dd>
             </dl>
         }
     </div>

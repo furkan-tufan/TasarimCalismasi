@@ -1,0 +1,137 @@
+﻿<aside class="main-sidebar sidebar-dark-primary elevation-1">
+    <br /><br /><br />
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                @{
+                    if (User.IsInRole("IT") || User.IsInRole("Yönetici"))
+                    {
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>
+                                    IT
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a asp-controller="Requests" asp-action="Index" class="nav-link">
+                                        <p>&emsp;&emsp;Bekleyen Talepler</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Requests" asp-action="OverIndex" class="nav-link">
+                                        <p>&emsp;&emsp;Çözülmüş Talepler</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Requests" asp-action="Create" class="nav-link">
+                                        <p>&emsp;&emsp;Talep Oluştur</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Requests" asp-action="MyRequests" class="nav-link">
+                                        <p>&emsp;&emsp;Açtığım Talepler</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a asp-controller="Requests" asp-action="Create" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>Talep Oluştur</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Requests" asp-action="MyRequests" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>Açtığım Talepler</p>
+                            </a>
+                        </li>
+                    }
+                    if (User.IsInRole("Satın Alma") || User.IsInRole("Yönetici"))
+                    {
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>
+                                    Satın Alma
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a asp-controller="Purchasing" asp-action="Create" class="nav-link">
+                                        <p>&emsp;&emsp;Sipariş Oluştur</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="PurchasingItem" asp-action="Index" class="nav-link">
+                                        <p>&emsp;&emsp;Sipariş Listesi</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+
+                    if (User.IsInRole("Muhasebe") || User.IsInRole("Yönetici"))
+                    {
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>
+                                    Muhasebe
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a asp-controller="PurchasingItem" asp-action="AccountingIndex" class="nav-link">
+                                        <p>&emsp;&emsp;Sipariş Listesi</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+
+                    if (User.IsInRole("İnsan Kaynakları") || User.IsInRole("Yönetici"))
+                    {
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>
+                                    İnsan Kaynakları
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Register" class="nav-link">
+                                        <p>&emsp;&emsp;Yeni Çalışan Ekle</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Home" asp-action="UserList" class="nav-link">
+                                        <p>&emsp;&emsp;Çalışan Listesi</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                }
+                <li class="nav-item">
+                    <a asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("HomePage", "Home", new { area = "" })" class="nav-link" class="nav-link">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>
+                            Çıkış Yap
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

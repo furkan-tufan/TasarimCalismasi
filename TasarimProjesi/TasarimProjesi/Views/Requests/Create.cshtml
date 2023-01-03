@@ -6,9 +6,10 @@
 
 <h2>Talep Oluştur</h2>
 <hr />
+<br />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
+        <form asp-action="Create" asp-controller="Requests" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <input asp-for="RequestTitle" class="form-control" placeholder="Talep Başlığı" />
@@ -32,5 +33,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

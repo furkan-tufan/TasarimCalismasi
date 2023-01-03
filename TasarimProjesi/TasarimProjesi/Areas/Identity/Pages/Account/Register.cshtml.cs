@@ -2,14 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -17,11 +9,14 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Logging;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.Encodings.Web;
 
 namespace TasarimProjesi.Areas.Identity.Pages.Account
 {
-    public class RegisterModel : PageModel
+	[Authorize(Roles = "İnsan Kaynakları, Yönetici")]
+	public class RegisterModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
@@ -76,7 +71,7 @@ namespace TasarimProjesi.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "E-Posta")]
             public string Email { get; set; }
 
             /// <summary>
@@ -86,7 +81,7 @@ namespace TasarimProjesi.Areas.Identity.Pages.Account
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Şifre")]
             public string Password { get; set; }
 
             /// <summary>
@@ -94,7 +89,7 @@ namespace TasarimProjesi.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Şifreyi Tekrarla")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }

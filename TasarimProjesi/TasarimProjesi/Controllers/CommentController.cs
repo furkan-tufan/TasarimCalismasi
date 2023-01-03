@@ -1,9 +1,9 @@
-﻿using TasarimProjesi.Data;
-using TasarimProjesi.Models;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Xml.Linq;
+using TasarimProjesi.Data;
+using TasarimProjesi.Models;
 
 namespace TasarimProjesi.Controllers
 {
@@ -11,16 +11,13 @@ namespace TasarimProjesi.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        public CommentController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        private readonly INotyfService _notyf;
+
+        public CommentController(ApplicationDbContext context, UserManager<IdentityUser> userManager, INotyfService notyf)
         {
             _context = context;
             _userManager = userManager;
-        }
-        [Authorize]
-        public ActionResult Details(int? id)
-        {
-            Comment commentt = _context.Comment.Find(id);
-            return View(commentt);
+            _notyf = notyf;
         }
 
         [HttpPost]
@@ -43,9 +40,8 @@ namespace TasarimProjesi.Controllers
 
             _context.Comment.Add(c);
             _context.SaveChanges();
-
+            _notyf.Success("Yorum Eklendi");
             return RedirectToAction("Index", "PurchasingItem");
         }
-
     }
 }

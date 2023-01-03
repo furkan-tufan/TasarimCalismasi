@@ -619,3 +619,5 @@ C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi\obj\Debug\net6.0\refint\Ta
 C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi\obj\Debug\net6.0\TasarimProjesi.pdb
 C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi\obj\Debug\net6.0\TasarimProjesi.genruntimeconfig.cache
 C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi\obj\Debug\net6.0\ref\TasarimProjesi.dll
+C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
+C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll

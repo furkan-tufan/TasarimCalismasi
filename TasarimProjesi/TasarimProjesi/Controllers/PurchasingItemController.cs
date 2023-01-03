@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TasarimProjesi.Data;
 using TasarimProjesi.Models;
@@ -13,20 +11,24 @@ namespace TasarimProjesi.Controllers
     public class PurchasingItemController : Controller
     {
         private readonly ApplicationDbContext _context;
+		private readonly UserManager<IdentityUser> _userManager;
+		private readonly INotyfService _notyf;
 
-        public PurchasingItemController(ApplicationDbContext context)
+		public PurchasingItemController(ApplicationDbContext context, INotyfService notyf, UserManager<IdentityUser> userManager)
         {
             _context = context;
-        }
+			_notyf = notyf;
+			_userManager = userManager;
+		}
 
-        // GET: PurchasingItem
+        [Authorize(Roles = "Yönetici, Satın Alma")]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.PurchasingItem.Include(p => p.Purchasing);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: PurchasingItem/Details/5
+        [Authorize(Roles = "Yönetici, Satın Alma")]
         public async Task<IActionResult> Details(int? id)
         {
 
@@ -41,7 +43,7 @@ namespace TasarimProjesi.Controllers
             return View(purchasingItem);
         }
 
-        // GET: PurchasingItem/Delete/5
+        [Authorize(Roles = "Yönetici, Satın Alma")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.PurchasingItem == null)
@@ -60,7 +62,7 @@ namespace TasarimProjesi.Controllers
             return View(purchasingItem);
         }
 
-        // POST: PurchasingItem/Delete/5
+        [Authorize(Roles = "Yönetici, Satın Alma")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -83,5 +85,59 @@ namespace TasarimProjesi.Controllers
         {
           return _context.PurchasingItem.Any(e => e.PurchasingItemId == id);
         }
-    }
+
+        [Authorize(Roles = "Yönetici, Muhasebe")]
+        [HttpGet]
+		public async Task<IActionResult> AccountingIndex()
+		{
+			var data = _context.PurchasingItem.Include(p => p.Purchasing).Where(a => a.Uploaded==false);
+			return View(await data.ToListAsync());
+		}
+
+		[HttpGet]
+        [Authorize(Roles = "Yönetici, Muhasebe")]
+        public async Task<IActionResult> Accounting(int? id)
+		{
+            var purchasingItem = await _context.PurchasingItem
+                .Include(p => p.Purchasing)
+                .FirstOrDefaultAsync(m => m.PurchasingItemId == id);
+            ViewBag.Id = id.Value;
+            return View(purchasingItem);
+		}
+
+        [HttpPost]
+        [Authorize(Roles = "Yönetici, Muhasebe")]
+        public async Task<IActionResult> Invoice(List<IFormFile> invoices)
+		{
+			var user = await _userManager.GetUserAsync(HttpContext.User);
+			int id = Convert.ToInt32(Request.Form["id"]);
+			var item = await _context.PurchasingItem.FirstOrDefaultAsync(m => m.PurchasingItemId == id);
+			foreach (var file in invoices)
+			{
+				if (file != null)
+				{
+					var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+					var extension = Path.GetExtension(file.FileName);
+					var fileModel = new FileModel
+					{
+						FileType = file.ContentType,
+						Extension = extension,
+						Name = fileName,
+						UploadedBy = user.UserName
+					};
+					using (var dataStream = new MemoryStream())
+					{
+						await file.CopyToAsync(dataStream);
+						fileModel.Data = dataStream.ToArray();
+					}
+					item.FileList.Add(fileModel);
+				}
+			}
+            item.Uploaded = true;
+			_context.Update(item);
+			await _context.SaveChangesAsync();
+			_notyf.Success("Fatura Yüklendi!");
+			return RedirectToAction("AccountingIndex", "PurchasingItem");
+		}
+	}
 }

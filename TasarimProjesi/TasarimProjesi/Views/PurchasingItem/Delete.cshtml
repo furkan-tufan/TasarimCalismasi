@@ -5,9 +5,9 @@
 }
 
 <h3>Siparişi silmek istediğinize emin misiniz?</h3>
+<hr />
+<br />
 <div>
-    <h4>PurchasingItem</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Purchasing)
@@ -55,7 +55,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="PurchasingItemId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
         <a asp-action="Index">Listeye Dön</a>
     </form>
 </div>

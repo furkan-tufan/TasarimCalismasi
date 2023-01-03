@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TasarimProjesi.Data;
 using TasarimProjesi.Models;
@@ -16,22 +12,34 @@ namespace TasarimProjesi.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-
-        public RequestsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        private readonly INotyfService _notyf;
+        public RequestsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, INotyfService notyf)
         {
             _context = context;
-            _userManager=userManager;
+            _userManager = userManager;
+            _notyf = notyf;
         }
 
-        // GET: Requests
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Request.ToListAsync());
+            return View(await _context.Request.Where(a => a.IsOver == false).ToListAsync());
         }
 
-        // GET: Requests/Details/5
         [Authorize]
+        public async Task<IActionResult> MyRequests()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            return View(await _context.Request.Where(a => a.User == user.UserName).ToListAsync());
+        }
+
+        [Authorize]
+        public async Task<IActionResult> OverIndex()
+        {
+            return View(await _context.Request.Where(a => a.IsOver == true).ToListAsync());
+        }
+
+        [Authorize(Roles = "Yönetici, IT")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Request == null)
@@ -50,54 +58,46 @@ namespace TasarimProjesi.Controllers
             return View(request);
         }
 
-        // GET: Requests/Create
         [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Requests/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles = "Yönetici, IT")]
         public async Task<IActionResult> Create(Request request)
         {
-            if (ModelState.IsValid)
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            foreach (var file in request.Files)
             {
-                var user = await _userManager.GetUserAsync(HttpContext.User);
-                string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-                foreach (var file in request.Files)
+                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                var extension = Path.GetExtension(file.FileName);
+                var fileModel = new FileModel
                 {
-                    var fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                    var extension = Path.GetExtension(file.FileName);
-                    var fileModel = new FileModel
-                    {
-                        CreatedOn = time,
-                        FileType = file.ContentType,
-                        Extension = extension,
-                        Name = fileName
-                    };
-                    using (var dataStream = new MemoryStream())
-                    {
-                        await file.CopyToAsync(dataStream);
-                        fileModel.Data = dataStream.ToArray();
-                    }
-                    request.FileList.Add(fileModel);
+                    CreatedOn = time,
+                    FileType = file.ContentType,
+                    Extension = extension,
+                    Name = fileName
+                };
+                using (var dataStream = new MemoryStream())
+                {
+                    await file.CopyToAsync(dataStream);
+                    fileModel.Data = dataStream.ToArray();
                 }
-                request.Date = time;
-                request.User = user.UserName;
-                _context.Add(request);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                request.FileList.Add(fileModel);
             }
-            return View(request);
+            request.Date = time;
+            request.User = user.UserName;
+            _context.Add(request);
+            await _context.SaveChangesAsync();
+            _notyf.Success("Talep Oluşturuldu");
+            return RedirectToAction(nameof(Index));
         }
 
-        [Authorize]
-        // GET: Requests/Edit/5
+        [Authorize(Roles = "Yönetici, IT")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Request == null)
@@ -115,65 +115,39 @@ namespace TasarimProjesi.Controllers
             return View(request);
         }
 
-        // POST: Requests/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
-        public async Task<IActionResult> Edit(int id, [Bind("RequestId,RequestTitle,RequestDetail,Date,User")] Request request)
+        [Authorize(Roles = "Yönetici, IT")]
+        public async Task<IActionResult> Edit(int id, Request request)
         {
             string time = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-            if (id != request.RequestId)
+            foreach (var file in request.Files)
             {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                var extension = Path.GetExtension(file.FileName);
+                var fileModel = new FileModel
                 {
-                    foreach (var file in request.Files)
-                    {
-
-                        var fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                        var extension = Path.GetExtension(file.FileName);
-                        var fileModel = new FileModel
-                        {
-                            CreatedOn = time,
-                            FileType = file.ContentType,
-                            Extension = extension,
-                            Name = fileName
-                        };
-                        using (var dataStream = new MemoryStream())
-                        {
-                            await file.CopyToAsync(dataStream);
-                            fileModel.Data = dataStream.ToArray();
-                        }
-                        request.FileList.Add(fileModel);
-                    }
-                    request.IsOver = true;
-                    _context.Update(request);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
+                    CreatedOn = time,
+                    FileType = file.ContentType,
+                    Extension = extension,
+                    Name = fileName
+                };
+                using (var dataStream = new MemoryStream())
                 {
-                    if (!RequestExists(request.RequestId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    await file.CopyToAsync(dataStream);
+                    fileModel.Data = dataStream.ToArray();
                 }
-                return RedirectToAction(nameof(Index));
+                request.FileList.Add(fileModel);
             }
+            request.IsOver = true;
+            _context.Update(request);
+            _notyf.Success("İşlem Başarılı");
+            await _context.SaveChangesAsync();
             return View(request);
         }
 
-        // GET: Requests/Delete/5
-        [Authorize]
+
+        [Authorize(Roles = "Yönetici, IT")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Request == null)
@@ -191,10 +165,9 @@ namespace TasarimProjesi.Controllers
             return View(request);
         }
 
-        // POST: Requests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles = "Yönetici, IT")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Request == null)
@@ -208,8 +181,10 @@ namespace TasarimProjesi.Controllers
             }
 
             await _context.SaveChangesAsync();
+            _notyf.Success("Talep Silindi");
             return RedirectToAction(nameof(Index));
         }
+
         [Authorize]
         private bool RequestExists(int id)
         {

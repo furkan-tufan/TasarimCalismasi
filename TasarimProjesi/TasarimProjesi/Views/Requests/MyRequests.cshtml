@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TasarimProjesi.Models.Request>
+
+@{
+    ViewData["Title"] = "Açtığım Talepler";
+}
+
+<h2>Açtığım Talepler</h2>
+<hr />
+<br />
+
+<table class="table table-secondary table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestDetail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestDetail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RequestId">Detaylar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

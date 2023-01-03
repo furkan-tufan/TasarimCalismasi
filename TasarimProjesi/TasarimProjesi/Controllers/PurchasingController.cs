@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using System.Data;
 using TasarimProjesi.Data;
 using TasarimProjesi.Models;
 
@@ -12,15 +9,15 @@ namespace TasarimProjesi.Controllers
     public class PurchasingController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly INotyfService _notyf;
 
-        public PurchasingController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public PurchasingController(ApplicationDbContext context, INotyfService notyf)
         {
             _context = context;
-            _userManager = userManager;
+            _notyf = notyf;
         }
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "Yönetici, Satın Alma")]
         public IActionResult Create()
         {
             Purchasing purchasing = new Purchasing();
@@ -28,7 +25,7 @@ namespace TasarimProjesi.Controllers
             return View(purchasing);
         }
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Yönetici, Satın Alma")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Purchasing purchasing)
         {
@@ -39,8 +36,8 @@ namespace TasarimProjesi.Controllers
             }
             _context.Add(purchasing);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Home", "Index");
-
+            _notyf.Success("İşlem Başarılı");
+            return RedirectToAction("PruchasingItem", "Index");
         }
-    }
+	}
 }
