@@ -37,7 +37,7 @@ namespace TasarimProjesi.Controllers
             _context.Add(purchasing);
             await _context.SaveChangesAsync();
             _notyf.Success("İşlem Başarılı");
-            return RedirectToAction("PruchasingItem", "Index");
+            return RedirectToAction("Index", "PurchasingItem");
         }
 	}
 }

@@ -40,5 +40,13 @@ namespace TasarimProjesi.Controllers
             }
             return View(model);
         }
+
+        [Authorize]
+        public async Task<IActionResult> DownloadFile(int id)
+        {
+            var file = await _context.FileModel.Where(x => x.FileId == id).FirstOrDefaultAsync();
+            if (file == null) return null;
+            return File(file.Data, file.FileType, file.Name + file.Extension);
+        }
     }
 }

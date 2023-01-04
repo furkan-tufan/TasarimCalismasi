@@ -9,261 +9,261 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TasarimProjesi
 build_property.RootNamespace = TasarimProjesi
-build_property.ProjectDir = C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi\
+build_property.ProjectDir = C:\Users\Elif\Desktop\TasarimProjesi\TasarimProjesi\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Furkan\Desktop\TasarimProjesi\TasarimProjesi
+build_property.MSBuildProjectDirectory = C:\Users\Elif\Desktop\TasarimProjesi\TasarimProjesi
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Lockout.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Error.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Home/HomePage.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Home/HomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Home/UserList.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Home/UserList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Accounting.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Accounting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2luZ0l0ZW1cQWNjb3VudGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/AccountingIndex.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/AccountingIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2luZ0l0ZW1cQWNjb3VudGluZ0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Delete.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2luZ0l0ZW1cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Details.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2luZ0l0ZW1cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Index.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/PurchasingItem/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2luZ0l0ZW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Purchasing/Create.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Purchasing/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2luZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Create.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Delete.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Edit.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Index.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/MyRequests.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/MyRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcTXlSZXF1ZXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/OverIndex.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Requests/OverIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdHNcT3ZlckluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/Error.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_CommentBox.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_CommentBox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db21tZW50Qm94LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_MainNavigation.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_MainNavigation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTmF2aWdhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_Scripts.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_Scripts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TY3JpcHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_Styles.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_Styles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdHlsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/_ViewImports.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/_ViewStart.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Furkan/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_Layout.cshtml]
+[C:/Users/Elif/Desktop/TasarimProjesi/TasarimProjesi/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-w4e6rrgb5f

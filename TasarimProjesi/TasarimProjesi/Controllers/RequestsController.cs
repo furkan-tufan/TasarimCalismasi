@@ -19,8 +19,8 @@ namespace TasarimProjesi.Controllers
             _userManager = userManager;
             _notyf = notyf;
         }
-
         [Authorize]
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Request.Where(a => a.IsOver == false).ToListAsync());
@@ -66,7 +66,7 @@ namespace TasarimProjesi.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Yönetici, IT")]
+        [Authorize]
         public async Task<IActionResult> Create(Request request)
         {
             var user = await _userManager.GetUserAsync(HttpContext.User);
@@ -94,17 +94,16 @@ namespace TasarimProjesi.Controllers
             _context.Add(request);
             await _context.SaveChangesAsync();
             _notyf.Success("Talep Oluşturuldu");
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("HomePage", "Home");
         }
 
-        [Authorize(Roles = "Yönetici, IT")]
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Request == null)
             {
                 return NotFound();
             }
-
             var request = await _context.Request.FindAsync(id);
             if (request == null)
             {
@@ -112,6 +111,8 @@ namespace TasarimProjesi.Controllers
             }
             var user = await _userManager.GetUserAsync(HttpContext.User);
             ViewData["User"] = user.UserName;
+            var files = _context.FileModel.Where(d => d.RequestId.Equals(id)).ToList();
+            ViewBag.Files = files;
             return View(request);
         }
 
@@ -139,11 +140,13 @@ namespace TasarimProjesi.Controllers
                 }
                 request.FileList.Add(fileModel);
             }
+            var files = _context.FileModel.Where(d => d.RequestId.Equals(id)).ToList();
+            ViewBag.Files = files;
             request.IsOver = true;
             _context.Update(request);
-            _notyf.Success("İşlem Başarılı");
             await _context.SaveChangesAsync();
-            return View(request);
+            _notyf.Success("İşlem Başarılı");
+            return RedirectToAction(nameof(Index));
         }
 
 

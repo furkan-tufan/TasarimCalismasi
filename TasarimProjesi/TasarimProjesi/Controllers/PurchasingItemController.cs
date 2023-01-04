@@ -31,7 +31,8 @@ namespace TasarimProjesi.Controllers
         [Authorize(Roles = "Yönetici, Satın Alma")]
         public async Task<IActionResult> Details(int? id)
         {
-
+            var files = _context.FileModel.Where(d => d.PurchasingItemId.Equals(id.Value)).ToList();
+            ViewBag.Files = files;
             var purchasingItem = await _context.PurchasingItem
                 .Include(p => p.Purchasing)
                 .FirstOrDefaultAsync(m => m.PurchasingItemId == id);

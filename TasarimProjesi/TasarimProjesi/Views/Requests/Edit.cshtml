@@ -35,9 +35,10 @@
                 @ViewBag.User
             </dd>
         </dl>
-        <hr />  
+       
         @if (!Model.IsOver && (User.IsInRole("IT") || User.IsInRole("Yönetici")))
         {
+            <hr />
             <form asp-action="Edit" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="RequestId" />
@@ -71,6 +72,35 @@
         }
     </div>
 </div>
+
+@{
+    var fileList = (IEnumerable<TasarimProjesi.Models.FileModel>)ViewBag.Files;
+}
+
+@if (fileList.Any())
+{
+    <hr />
+    <h3>Dosyalar</h3>
+    <table class="table table-hover table-secondary col-md-6">
+        <thead>
+            <tr>
+                <th class="col-md-6">Dosya Adı</th>
+                <th class="col-md-6"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var file in fileList)
+            {
+                <tr>
+                    <td>@file.Name</td>
+                    <td style="text-align: right;">
+                        <a type="button" class="btn btn-primary" asp-controller="Home" asp-action="DownloadFile" asp-route-id="@file.FileId">İndir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 
 @section Scripts {
